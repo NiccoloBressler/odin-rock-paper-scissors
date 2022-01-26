@@ -1,4 +1,6 @@
 const results = document.querySelector('#results');
+const playerScoreResult = document.querySelector('#playerScore');
+const computerScoreResult = document.querySelector('#computerScore');
 
 let playerScore = 0;
 let computerScore = 0;
@@ -10,29 +12,40 @@ function computerPlay() {
 }
 
 function playRound(playerSelection, computerSelection) {
-    
+
     if ((playerSelection === "rock") && (computerSelection === "scissors")) {
         results.textContent = "You win, " + playerSelection + " beats " + computerSelection + ".";
         playerScore++;
+
     } else if ((playerSelection === "paper") && (computerSelection === "rock")) {
         results.textContent = "You win, " + playerSelection + " beats " + computerSelection + ".";
         playerScore++;
+
     } else if ((playerSelection === "scissors") && (computerSelection === "paper")) {
         results.textContent = "You win, " + playerSelection + " beats " + computerSelection + ".";
         playerScore++;
+
     } else if ((computerSelection === "rock") && (playerSelection === "scissors")) {
         results.textContent = "You lose, " + computerSelection + " beats " + playerSelection + ".";
         computerScore++;
+
     } else if ((computerSelection === "paper") && (playerSelection === "rock")) {
         results.textContent = "You lose, " + computerSelection + " beats " + playerSelection + ".";
         computerScore++;
+
     } else if ((computerSelection === "scissors") && (playerSelection === "paper")) {
         results.textContent = "You lose, " + computerSelection + " beats " + playerSelection + ".";
         computerScore++;
+
     } else if ((playerSelection) === (computerSelection)) {
         results.textContent = "The round is a tie.";
     }
+
+    playerScoreResult.textContent = playerScore;
+    computerScoreResult.textContent = computerScore;
+
 }
+
 
 const rock = document.getElementById('rock');
 rock.onclick = () => playRound('rock', computerPlay());
