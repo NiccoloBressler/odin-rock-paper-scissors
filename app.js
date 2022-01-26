@@ -1,6 +1,7 @@
 const results = document.querySelector('#results');
 const playerScoreResult = document.querySelector('#playerScore');
 const computerScoreResult = document.querySelector('#computerScore');
+const options = document.querySelector('#options');
 
 let playerScore = 0;
 let computerScore = 0;
@@ -62,14 +63,3 @@ paper.onclick = () => playRound('paper', computerPlay());
 
 const scissors = document.getElementById('scissors');
 scissors.onclick = () => playRound('scissors', computerPlay());
-
-function game() {
-    // for (var i = 0; i < 5; i++) {
-    //     const playerInput = prompt("Enter your choice: ");
-    //     const playerSelection = playerInput.toLowerCase();
-    //     const computerSelection = computerPlay().toLowerCase();
-    //     console.log(playRound(playerSelection, computerSelection));
-    // }
-}
-
-// game();
