@@ -1,3 +1,5 @@
+const results = document.querySelector('#results');
+
 let playerScore = 0;
 let computerScore = 0;
 
@@ -10,25 +12,25 @@ function computerPlay() {
 function playRound(playerSelection, computerSelection) {
     
     if ((playerSelection === "rock") && (computerSelection === "scissors")) {
-        console.log("You win! Rock beats scissors.");
+        results.textContent = "You win, " + playerSelection + " beats " + computerSelection + ".";
         playerScore++;
     } else if ((playerSelection === "paper") && (computerSelection === "rock")) {
-        console.log("You win! Paper beats rock.");
+        results.textContent = "You win, " + playerSelection + " beats " + computerSelection + ".";
         playerScore++;
     } else if ((playerSelection === "scissors") && (computerSelection === "paper")) {
-        console.log("You win! Scissors beats paper.");
+        results.textContent = "You win, " + playerSelection + " beats " + computerSelection + ".";
         playerScore++;
     } else if ((computerSelection === "rock") && (playerSelection === "scissors")) {
-        console.log("You lose! Rock beats scissors.");
+        results.textContent = "You lose, " + computerSelection + " beats " + playerSelection + ".";
         computerScore++;
     } else if ((computerSelection === "paper") && (playerSelection === "rock")) {
-        console.log("You lose! Paper beats rock.");
+        results.textContent = "You lose, " + computerSelection + " beats " + playerSelection + ".";
         computerScore++;
     } else if ((computerSelection === "scissors") && (playerSelection === "paper")) {
-        console.log("You lose! Scissors beats paper.");
+        results.textContent = "You lose, " + computerSelection + " beats " + playerSelection + ".";
         computerScore++;
     } else if ((playerSelection) === (computerSelection)) {
-        console.log("The game is a tie.");
+        results.textContent = "The round is a tie.";
     }
 }
 
