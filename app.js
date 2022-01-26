@@ -13,39 +13,46 @@ function computerPlay() {
 
 function playRound(playerSelection, computerSelection) {
 
-    if ((playerSelection === "rock") && (computerSelection === "scissors")) {
-        results.textContent = "You win, " + playerSelection + " beats " + computerSelection + ".";
-        playerScore++;
-
-    } else if ((playerSelection === "paper") && (computerSelection === "rock")) {
-        results.textContent = "You win, " + playerSelection + " beats " + computerSelection + ".";
-        playerScore++;
-
-    } else if ((playerSelection === "scissors") && (computerSelection === "paper")) {
-        results.textContent = "You win, " + playerSelection + " beats " + computerSelection + ".";
-        playerScore++;
-
-    } else if ((computerSelection === "rock") && (playerSelection === "scissors")) {
-        results.textContent = "You lose, " + computerSelection + " beats " + playerSelection + ".";
-        computerScore++;
-
-    } else if ((computerSelection === "paper") && (playerSelection === "rock")) {
-        results.textContent = "You lose, " + computerSelection + " beats " + playerSelection + ".";
-        computerScore++;
-
-    } else if ((computerSelection === "scissors") && (playerSelection === "paper")) {
-        results.textContent = "You lose, " + computerSelection + " beats " + playerSelection + ".";
-        computerScore++;
-
-    } else if ((playerSelection) === (computerSelection)) {
-        results.textContent = "The round is a tie.";
+    if ((playerScore == 5) || (computerScore == 5)) {
+        if (playerScore == 5) {
+            results.textContent = "You have already won the game!";
+        } else {
+            results.textContent = "You have already lost the game.";
+        }
+    } else {
+        if ((playerSelection === "rock") && (computerSelection === "scissors")) {
+            results.textContent = "You win, " + playerSelection + " beats " + computerSelection + ".";
+            playerScore++;
+    
+        } else if ((playerSelection === "paper") && (computerSelection === "rock")) {
+            results.textContent = "You win, " + playerSelection + " beats " + computerSelection + ".";
+            playerScore++;
+    
+        } else if ((playerSelection === "scissors") && (computerSelection === "paper")) {
+            results.textContent = "You win, " + playerSelection + " beats " + computerSelection + ".";
+            playerScore++;
+    
+        } else if ((computerSelection === "rock") && (playerSelection === "scissors")) {
+            results.textContent = "You lose, " + computerSelection + " beats " + playerSelection + ".";
+            computerScore++;
+    
+        } else if ((computerSelection === "paper") && (playerSelection === "rock")) {
+            results.textContent = "You lose, " + computerSelection + " beats " + playerSelection + ".";
+            computerScore++;
+    
+        } else if ((computerSelection === "scissors") && (playerSelection === "paper")) {
+            results.textContent = "You lose, " + computerSelection + " beats " + playerSelection + ".";
+            computerScore++;
+    
+        } else if ((playerSelection) === (computerSelection)) {
+            results.textContent = "The round is a tie.";
+        }
     }
 
     playerScoreResult.textContent = playerScore;
     computerScoreResult.textContent = computerScore;
 
 }
-
 
 const rock = document.getElementById('rock');
 rock.onclick = () => playRound('rock', computerPlay());
